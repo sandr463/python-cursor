@@ -1,7 +1,5 @@
 {% load static %}
 
-<img src="{% static 'birds.jpg' %}">
-
 {% for article in articles %}
-    <p>{{ article.title }}</p>
+    <a href="{% url 'detail' article.id %}">{{ article.title }}</a>
 {% endfor %}

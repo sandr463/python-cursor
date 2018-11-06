@@ -1,7 +1,5 @@
 <form action="{% url 'add_article' %}" method="post">
     {% csrf_token %}
-    <input type="text" name="title" id="title"><br>
-    <input type="text" name="description" id="description"><br>
-    <input type="text" name="author" id="author"><br>
+    {{ form.as_p }}
     <input type="submit" value="Submit">
 </form>

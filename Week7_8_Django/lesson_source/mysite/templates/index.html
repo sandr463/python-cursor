@@ -1,5 +1,5 @@
 {% load static %}
 
-{% for article in articles %}
+{% for article in object_list %}
     <a href="{% url 'detail' article.id %}">{{ article.title }}</a>
 {% endfor %}

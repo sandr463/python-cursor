@@ -1,0 +1,6 @@
+{% for article in articles %}
+<p>{{ article.title }}</p>
+{% endfor %}
+
+{% load static %}
+<img src="{% static 'my_img.jpg' %}">

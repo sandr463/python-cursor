@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.urls import reverse
 
 from visitors.forms import NewVisitorForm
@@ -14,6 +13,7 @@ class VisitorListView(ListView):
 class VisitorDetailView(DetailView):
     model = Visitor
     template_name = "detail.html"
+
 
 class VisitorAddView(CreateView):
     model = Visitor

@@ -1,2 +1,5 @@
 <p>{{ article.title }}</p>
 <p>{{ article.id }}</p>
+<p>{{article.author}}</p>
+<a href="{% url 'update_article' article.id %}">UPDATE</a>
+<a href="{% url 'delete_article' article.id %}">DELETE</a>

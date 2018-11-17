@@ -10,4 +10,4 @@ class VisitorListView(ListView):
 
 class VisitorDetailView(DetailView):
     model = Visitor
-    template_name = "index.html"
+    template_name = "detail.html"

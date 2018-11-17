@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from blog.views import IndexView, ArticleDetailView, ArticleCreateView
+from blog.views import IndexView, ArticleDetailView, ArticleCreateView, LoginFormView, LogoutView, \
+    ArticleUpdateView, ArticleDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,9 @@ urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('article/<int:pk>', ArticleDetailView.as_view(), name='detail'),
     path('article/add', ArticleCreateView.as_view(), name='add_article'),
+    path('article/update/<int:pk>', ArticleUpdateView.as_view(), name='update_article'),
+    path('article/delete/<int:pk>', ArticleDeleteView.as_view(), name='delete_article'),
+
+    path('login/', LoginFormView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
 ]

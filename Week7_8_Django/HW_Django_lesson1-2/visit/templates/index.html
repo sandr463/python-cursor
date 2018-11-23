@@ -1,3 +1,11 @@
-{% for visitor in object_list %}
-<a href="{% url 'detail' visitor.id %}"><p>{{ visitor.name }}</p></a>
-{% endfor %}
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ page_title }}{% endblock%}
+{% block content%}
+    <h1>Visitors</h1>
+    <ul>
+        {% for visitor in object_list %}
+            <li><a href="{% url 'detail' visitor.id %}"><p>{{ visitor.name }}</p></a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

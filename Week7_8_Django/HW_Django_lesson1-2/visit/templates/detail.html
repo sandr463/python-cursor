@@ -1,4 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ page_title }}{% endblock%}
+
+{% block content %}
+
 <p>name: {{ visitor.name }}</p>
 <p>age: {{ visitor.age }}</p>
-<p>some_info: {{ visitor.some_info }}</p>
+<p>some_info: {{ visitor.some_info|safe }}</p>
 <p>id: {{ visitor.id }}</p>
+
+<hr>
+<a href="{% url 'update_visitor' visitor.id %}">Update</a>
+<a href="{% url 'delete_visitor' visitor.id %}">Delete</a>
+
+{% endblock %}

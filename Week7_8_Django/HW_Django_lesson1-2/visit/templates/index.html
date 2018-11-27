@@ -2,6 +2,8 @@
 {% load static %}
 {% block title %}{{ page_title }}{% endblock%}
 {% block content%}
+
+    <a href="{% url 'add_visitor' %}">Add visitor</a>
     <h1>Visitors</h1>
     <ul>
         {% for visitor in object_list %}

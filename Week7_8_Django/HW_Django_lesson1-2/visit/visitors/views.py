@@ -21,11 +21,6 @@ class VisitorDetailView(DetailView):
     model = Visitor
     template_name = "detail.html"
 
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super(VisitorDetailView, self).get_context_data()
-        context['page_title'] = object.__name__
-        return context
-
 
 class VisitorAddView(CreateView):
     model = Visitor

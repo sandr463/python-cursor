@@ -3,7 +3,11 @@
 {% block title %}{{ page_title }}{% endblock%}
 {% block content%}
 
-    <a href="{% url 'add_visitor' %}">Add visitor</a>
+    {% if user.is_authenticated %}
+        <a class="btn btn-info" href="{% url 'add_visitor'%}">Add article</a>
+    {% else %}
+        <p>You should login to add visitor</p>
+    {% endif %}
     <h1>Visitors</h1>
     <ul>
         {% for visitor in object_list %}
